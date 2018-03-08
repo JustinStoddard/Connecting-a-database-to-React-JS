@@ -1,18 +1,39 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import TodoForm from './components/TodoForm';
+import TodoList from './component/TodoList';
 
 class App extends Component {
+  state = { todos: [] }
+
+  componentDidMount() { //This is like "Index" In Rails.
+    
+  }  
+
+  addItem = (name) => {
+
+  }
+
+  updateTodo = (id) => {
+
+  }
+
+  deleteTodo = (id) => {
+
+  }
+
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+      <div>
+        <TodoForm 
+          addItem={this.addItem} 
+        />
+
+        <TodoList 
+          todos={this.state.todos} 
+          updateTodo={this.updateTodo} 
+          delelteTodo={this.deletetodo} 
+        />
+        
       </div>
     );
   }
